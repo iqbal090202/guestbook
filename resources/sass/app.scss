@@ -1,0 +1,32 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+input:focus-visible, textarea:focus-visible {
+    outline: none;
+}
+
+.guestbook-main {
+    background-color: #f5cd90;
+    padding: 2rem;
+}
+
+.guestbook-app {
+    padding: 2rem 4rem;
+    width: calc(100vw - 4rem);
+    min-height: calc(100vh - 4rem);
+    background-color: #fafafa;
+    border-radius: 25px;
+}
+
+@media (max-width: 576px) {
+    .guesbook-app {
+        padding: 2rem;
+    }
+}
