@@ -56,6 +56,15 @@ class GuestsController extends Controller
         return redirect()->route('guest.index')->with('success', 'Data tamu berhasil diperbarui.');
     }
 
+    public function nonactive() {
+        $guests = Guests::where('status', '1')->update(['status' => '0']);
+        if ($guests > 0) {
+            dd('woy');
+            return redirect()->route('guest.index')->with('success', 'Data tamu berhasil diperbarui.');
+        }
+        return redirect()->route('guest.index')->with('warning', 'Semua tamu sudah nonaktif.');
+    }
+
     public function destroy($id)
     {
         $guest = Guests::find($id);

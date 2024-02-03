@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attendance;
+use App\Models\Guests;
 use Illuminate\Http\Request;
 
 class AttendanceController extends Controller
@@ -16,6 +17,9 @@ class AttendanceController extends Controller
     public function destroy($id)
     {
         $data = Attendance::find($id);
+        $guest = Guests::find($data->guest_id);
+        $guest->status = '0';
+        $guest->save();
 
         if ($data) {
             $data->delete();

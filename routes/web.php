@@ -29,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/guests/{id}', [GuestsController::class, 'edit'])->name('guest.edit');
     Route::put('/guests/{id}', [GuestsController::class, 'update'])->name('guest.update');
     Route::delete('/guests/{id}', [GuestsController::class, 'destroy'])->name('guest.destroy');
+    Route::get('/nonactive-all-guest', [GuestsController::class, 'nonactive'])->name('guest.nonactiveall');
 
     Route::get('/attendances', [AttendanceController::class, 'index'])->name('attendance.index');
     Route::delete('/attendances/{id}', [AttendanceController::class, 'destroy'])->name('attendance.destroy');
